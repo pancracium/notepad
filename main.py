@@ -1,4 +1,4 @@
-#NOTEPAD [b0.5 (06-03-2023)]
+#NOTEPAD [v1.0 (06-03-2023)]
 
 #Import necessary modules
 import tkinter as tk
