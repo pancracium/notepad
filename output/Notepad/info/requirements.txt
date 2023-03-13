@@ -1,0 +1,3 @@
+REQUIREMENTS:
+
+Python 3.10+
