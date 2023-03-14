@@ -2,7 +2,7 @@
 
 A basic notepad made using Tkinter.
 
-### How to use
+## How to use
 
 Write text by simply typing into the text box.
 
@@ -47,3 +47,17 @@ You can use the file, edit and view menus for more options, such as undoing, sel
 ### Text widget
 
 Pretty easy to use, just write and text will appear. You're literally dumb if you can't use this.
+
+## How to convert to an .exe
+
+- Download the code as a zip file and unzip it to a folder
+
+- Open that folder with the terminal
+
+- Run this command:
+` pip install pyinstaller `
+
+- And lastly, run this one:
+` pyinstaller --onedir --noconsole --noconfirm --name "Notepad" --icon "images/icon.ico" --add-data "images/\*;images" --add-data "info/\*;info" --add-data "test.txt;." main.py `
+
+- Open the dist folder and run the app.
