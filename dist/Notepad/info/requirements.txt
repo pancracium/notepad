@@ -1,4 +1,0 @@
-REQUIREMENTS:
-
-Python 3.10+
-PyQt5
