@@ -22,7 +22,7 @@ class NotepadApp(tk.Frame):
         self.counter_var = tk.BooleanVar()
         self.counter_var.set(self.counter_visible)
         self.file_path = None
-        #Initiate methods.
+        #Initiate methods
         self.load_images()
         self.create_widgets()
         self.bind_keys()
