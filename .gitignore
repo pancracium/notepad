@@ -1,0 +1,6 @@
+/dist
+/build
+*.spec
+*.zip
+README.md
+/.vscode
