@@ -20,6 +20,8 @@ class Application(tk.Frame):
         self.word_count = 0
         self.line_count = 0
         self.counter_visible = False
+        self.counter_var = tk.BooleanVar()
+        self.counter_var.set(self.counter_visible)
         self.file_path = None
         #Initiate methods.
         self.load_images()
@@ -88,7 +90,7 @@ class Application(tk.Frame):
         #Create a View tab in the menu bar
         self.view_menu = tk.Menu(self.menu_bar, tearoff=0)
         self.menu_bar.add_cascade(label="View", menu=self.view_menu)
-        self.view_menu.add_checkbutton(label=f"Counter bar", accelerator="CTRL+B", command=self.toggle_counter, compound=tk.LEFT, image=self.toggle_counter_bar_image, variable=self.counter_visible)
+        self.view_menu.add_checkbutton(label=f"Counter bar", accelerator="CTRL+B", command=self.toggle_counter, compound=tk.LEFT, image=self.toggle_counter_bar_image, variable=self.counter_var)
         self.view_menu.add_separator()
         self.view_menu.add_command(label="Zoom in", accelerator="CTRL+=", command=self.zoom_in, compound=tk.LEFT, image=self.zoom_in_image)
         self.view_menu.add_command(label="Zoom out", accelerator="CTRL+-", command=self.zoom_out, compound=tk.LEFT, image=self.zoom_out_image)
@@ -313,12 +315,11 @@ class Application(tk.Frame):
     def toggle_counter(self):
         """Toggle the visibility of the counter bar."""
         self.counter_visible = not self.counter_visible
+        self.counter_var.set(self.counter_visible)
         if self.counter_visible:
             self.counter_frame.pack(side="left", fill="x")
-            self.view_menu.entryconfig(0, label="Counter bar", accelerator=str(self.counter_visible))
         else:
             self.counter_frame.pack_forget()
-            self.view_menu.entryconfig(0, label="Counter bar", accelerator=str(self.counter_visible))
 
     def update_counter(self):
         """Update the word, character and line counters."""
